@@ -1,7 +1,7 @@
 import { _ } from 'meteor/underscore';
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 import { isAdmin } from '/both/lib/is-admin';
 
 import { Licenses } from '/both/api/licenses/licenses';
@@ -110,7 +110,7 @@ Sources.schema = new SimpleSchema({
     defaultValue: false,
   },
   accessRestrictedTo: {
-    type: [String],
+    type: Array,
     label: 'Data is available to everybody',
     defaultValue: [],
     autoform: {
@@ -121,6 +121,9 @@ Sources.schema = new SimpleSchema({
         label: false,
       },
     },
+  },
+  'accessRestrictedTo.$': {
+    type: String,
   },
   hasRunningImport: {
     type: Boolean,

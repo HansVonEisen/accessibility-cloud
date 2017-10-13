@@ -1,5 +1,5 @@
 import { _ } from 'meteor/underscore';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 import { FilterPresets } from '/both/api/filter-presets/filter-presets';
 
 // Returns MongoDB query options for given request
@@ -15,7 +15,7 @@ export function filterPresetSelector(req) {
   });
 
   // Clean the data to remove whitespaces and have correct types
-  schema.clean(fieldsQuery);
+  schema.clean(fieldsQuery, { mutate: true });
 
   // Throw ValidationError if something is wrong
   schema.validate(fieldsQuery);

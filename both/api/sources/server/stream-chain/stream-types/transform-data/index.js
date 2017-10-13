@@ -1,5 +1,5 @@
 import { check } from 'meteor/check';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 import { _ } from 'lodash';
 import entries from '/both/lib/entries';
 import getVMContext from './get-vm-context';

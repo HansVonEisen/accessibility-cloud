@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 import { Sources } from '/both/api/sources/sources.js';
 import { OrganizationMembers } from '/both/api/organization-members/organization-members.js';
 import { SourceAccessRequests } from '../../source-access-requests.js';

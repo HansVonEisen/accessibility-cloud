@@ -4,7 +4,7 @@ import streamLength from 'stream-length';
 import { Meteor } from 'meteor/meteor';
 import { check, Match } from 'meteor/check';
 import { _ } from 'meteor/underscore';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 import { generateDynamicUrl } from '../generate-dynamic-url';
 
 export class HTTPDownload {

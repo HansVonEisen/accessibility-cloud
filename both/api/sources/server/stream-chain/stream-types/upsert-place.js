@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { check, Match } from 'meteor/check';
 import { PlaceInfos } from '/both/api/place-infos/place-infos';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 import { _ } from 'meteor/stevezhu:lodash';
 const { Transform } = Npm.require('zstreams');
 

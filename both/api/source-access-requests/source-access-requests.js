@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { _ } from 'lodash';
 import { Mongo } from 'meteor/mongo';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 import { Organizations } from '/both/api/organizations/organizations.js';
 export const SourceAccessRequests = new Mongo.Collection('SourceAccessRequests');
 

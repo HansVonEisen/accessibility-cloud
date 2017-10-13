@@ -1,6 +1,6 @@
 const { Transform } = Npm.require('zstreams');
 import { check } from 'meteor/check';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 import vm from 'vm';
 import vmScriptsOptions from './vm-scripts-options';
 

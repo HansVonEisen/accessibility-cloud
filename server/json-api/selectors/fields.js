@@ -1,6 +1,6 @@
 import { _ } from 'meteor/underscore';
 import { check, Match } from 'meteor/check';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 
 function splitString() {
   if (this.isSet && this.value instanceof String) {
@@ -42,7 +42,7 @@ export function fieldOptions(req, collection) {
   });
 
   // Clean the data to remove whitespaces and have correct types
-  schema.clean(fieldsQuery);
+  schema.clean(fieldsQuery, { mutate: true });
 
   // Throw ValidationError if something is wrong
   schema.validate(fieldsQuery);

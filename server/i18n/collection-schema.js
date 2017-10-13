@@ -1,6 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 import { check, Match } from 'meteor/check';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 
 // Add a helper function to the collection's document, e.g. getLocalizedName if the attribute
 // is called 'name'
