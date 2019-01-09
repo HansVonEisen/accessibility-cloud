@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 import { isAdmin } from '/both/lib/is-admin';
 import { Mongo } from 'meteor/mongo';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 import { Organizations } from '/both/api/organizations/organizations';
 import { userHasFullAccessToOrganizationId } from '/both/api/organizations/privileges';
 

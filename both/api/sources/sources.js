@@ -1,6 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 import { Match } from 'meteor/check';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 import { isAdmin } from '/both/lib/is-admin';
 import { ImportFlows } from '/both/api/import-flows/import-flows';
 import { Licenses } from '/both/api/licenses/licenses';
@@ -97,7 +97,7 @@ Sources.schema = new SimpleSchema({
     defaultValue: false,
   },
   accessRestrictedTo: {
-    type: [String],
+    type: Array,
     label: 'Data is available to everybody',
     defaultValue: [],
     autoform: {
@@ -108,6 +108,9 @@ Sources.schema = new SimpleSchema({
         label: false,
       },
     },
+  },
+  'accessRestrictedTo.$': {
+    type: String,
   },
   hasRunningImport: {
     type: Boolean,

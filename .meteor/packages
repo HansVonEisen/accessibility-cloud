@@ -5,35 +5,30 @@
 # but you can also edit it by hand.
 
 # meteor libraries
-meteor-base@1.0.4
-ecmascript@0.7.3
-es5-shim@4.6.15
-check@1.2.5
-tracker@1.1.3
+meteor-base@1.4.0
+ecmascript@0.12.4
+es5-shim@4.8.0
+check@1.3.1
+tracker@1.2.0
 audit-argument-checks@1.0.7
 
 # standard libraries
 jquery@1.11.10
 underscore@1.0.10
-less@2.7.9
+less@2.8.0
 stylus@2.513.9
-http
+http@1.4.1
 
 # ui
 blaze-html-templates@1.0.4
-reactive-dict@1.1.8
+reactive-dict@1.2.1
 reactive-var@1.0.11
-aldeed:template-extension
-percolate:momentum
 aldeed:autoform
 meteorhacks:subs-manager
 
 # data
-mongo@1.1.17
-aldeed:simple-schema
-aldeed:collection2
+mongo@1.6.0
 dburles:collection-helpers
-reywood:publish-composite
 mdg:validated-method
 mdg:validation-error
 peerlibrary:reactive-publish # Allows server-side publications to update their content reactively
@@ -48,19 +43,17 @@ zimme:active-route
 tap:i18n
 
 # accounts
-accounts-password@1.3.6
+accounts-password@1.5.1
 useraccounts:core
 useraccounts:unstyled
 useraccounts:flow-routing
-softwarerero:accounts-t9n
 
 # mobile
 # crosswalk@1.6.2
-mobile-experience@1.0.4
+mobile-experience@1.0.5
 
 # production
-juliancwirko:postcss
-standard-minifier-js@2.0.0
+standard-minifier-js@2.4.0
 ddp-rate-limiter@1.0.7
 app-prod-security
 
@@ -85,7 +78,7 @@ underscorestring:underscore.string
 momentjs:moment
 browser-policy@1.1.0
 markdown@1.0.12
-shell-server@0.2.3
+shell-server@0.4.0
 jparker:crypto-md5
 tomwasd:flow-router-seo
 themeteorchef:bert
@@ -97,3 +90,8 @@ percolate:synced-cron
 mdg:meteor-apm-agent
 meteorhacks:zones
 barbatus:typescript
+dynamic-import@0.5.0
+aldeed:collection2-core
+aldeed:collection2@3.0.0
+aldeed:schema-deny
+aldeed:schema-index

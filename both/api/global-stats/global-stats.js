@@ -1,6 +1,6 @@
 import { check } from 'meteor/check';
 import { Mongo } from 'meteor/mongo';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 
 export const GlobalStats = new Mongo.Collection('GlobalStats');
 

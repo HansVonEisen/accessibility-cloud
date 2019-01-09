@@ -1,5 +1,5 @@
 import { _ } from 'meteor/underscore';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 
 // Returns MongoDB query options for given request
 
@@ -22,7 +22,7 @@ export function paginationOptions(req) {
   });
 
   // Clean the data to remove whitespaces and have correct types
-  schema.clean(paginationQuery);
+  schema.clean(paginationQuery, { mutate: true });
 
   // Throw ValidationError if something is wrong
   schema.validate(paginationQuery);

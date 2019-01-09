@@ -1,6 +1,6 @@
 import request from 'request';
 import limit from 'simple-rate-limiter';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 import { check, Match } from 'meteor/check';
 import { generateDynamicUrl } from '../generate-dynamic-url';
 import generateRequestSignature from './generateRequestSignature';

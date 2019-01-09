@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { _ } from 'meteor/underscore';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 
 // Returns MongoDB query options for given request
 
@@ -19,7 +19,7 @@ export default function sourceFilterSelector(req) {
   });
 
   // Clean the data to remove whitespaces and have correct types
-  schema.clean(fieldsQuery);
+  schema.clean(fieldsQuery, { mutate: true });
 
   // Throw ValidationError if something is wrong
   schema.validate(fieldsQuery);

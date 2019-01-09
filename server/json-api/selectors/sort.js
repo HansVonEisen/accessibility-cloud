@@ -1,10 +1,10 @@
 import { _ } from 'meteor/underscore';
 import { check, Match } from 'meteor/check';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 import { ValidationError } from 'meteor/mdg:validation-error';
 
-SimpleSchema.messages(
-  { invalidFieldReference: '[label] should not contain non-allowed field name `[value]`.' },
+SimpleSchema.setDefaultMessages(
+  { en: { invalidFieldReference: '[label] should not contain non-allowed field name `[value]`.' } },
 );
 
 // Returns MongoDB query options for given request
@@ -41,7 +41,7 @@ export function sortOptions(req, collection) {
   });
 
   // Clean the data to remove whitespaces and have correct types
-  schema.clean(sortQuery);
+  schema.clean(sortQuery, { mutate: true });
 
   // Throw ValidationError if something is wrong
   schema.validate(sortQuery);

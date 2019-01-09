@@ -1,6 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 import { Meteor } from 'meteor/meteor';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 import { Organizations } from '/both/api/organizations/organizations';
 import { AppLinks } from '/both/api/app-links/app-links';
 import LocalizedStringSchema from '../shared/LocalizedStringSchema';
@@ -109,10 +109,6 @@ Apps.schema = new SimpleSchema({
     allowedValues: [true],
   },
   clientSideConfiguration: { type: clientSideConfiguration, optional: true },
-});
-
-Apps.schema.messages({
-  notAllowed: 'Sorry, but this is not a valid option.',
 });
 
 Apps.attachSchema(Apps.schema);

@@ -3,7 +3,7 @@
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 import { HTTP } from 'meteor/http';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 import { isPlainObject, get, set, isArray, fromPairs } from 'lodash';
 import { Stream } from 'stream';
 import StreamObserver from './stream-observer';

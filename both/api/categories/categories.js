@@ -1,6 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 import { Match } from 'meteor/check';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 
 export const Categories = new Mongo.Collection('Categories');
 
@@ -33,10 +33,16 @@ Categories.schema = new SimpleSchema({
     regEx: /[a-z-.]+/,
   },
   synonyms: {
-    type: [String],
+    type: Array,
+  },
+  'synonyms.$': {
+    type: String,
   },
   parentIds: {
-    type: [String],
+    type: Array,
+  },
+  'parentIds.$': {
+    type: String,
   },
   translations: {
     type: Match.ObjectIncluding({}),

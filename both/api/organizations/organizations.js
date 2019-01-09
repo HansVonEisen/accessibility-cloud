@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 import { Mongo } from 'meteor/mongo';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 import { Sources } from '/both/api/sources/sources';
 import { OrganizationMembers } from '/both/api/organization-members/organization-members';
 import { Apps } from '/both/api/apps/apps';
@@ -133,9 +133,6 @@ Organizations.schema = new SimpleSchema({
   },
 });
 
-Organizations.schema.messages({
-  notAllowed: 'Sorry, but this is not a valid option.',
-});
 
 Organizations.helpers({
   editableBy(userId) {

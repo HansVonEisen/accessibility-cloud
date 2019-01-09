@@ -2,7 +2,7 @@ import request from 'request';
 import { Meteor } from 'meteor/meteor';
 import { check, Match } from 'meteor/check';
 import { _ } from 'meteor/underscore';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 import { generateDynamicUrl } from '../generate-dynamic-url';
 import generateRequestSignature from './generateRequestSignature';
 import asCurlString from './asCurlString';
