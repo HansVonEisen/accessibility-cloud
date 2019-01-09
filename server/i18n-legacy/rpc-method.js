@@ -2,7 +2,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import { check } from 'meteor/check';
-import { TAPi18n } from 'meteor/tap:i18n';
+
 import { isAdmin } from '/both/lib/is-admin';
 import { syncWithTransifex } from './sync';
 import { resourceSlugForCollection } from '../../both/i18n/resource-slug';
@@ -59,10 +59,10 @@ export function addRPCMethodForSyncing(
   Meteor.methods({
     [methodName]() {
       if (!this.userId) {
-        throw new Meteor.Error(401, TAPi18n.__('Please log in first.'));
+        throw new Meteor.Error(401, 'Please log in first.');
       }
       if (!isAdmin(this.userId)) {
-        throw new Meteor.Error(403, TAPi18n.__('You are not authorized to import categories.'));
+        throw new Meteor.Error(403, 'You are not authorized to import categories.');
       }
       return syncCollectionWithTransifex(
         { collection, attributePathFn, msgidFn, defaultLocale }

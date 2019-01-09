@@ -1,5 +1,5 @@
 import { AccountsTemplates } from 'meteor/useraccounts:core';
-import { TAPi18n } from 'meteor/tap:i18n';
+
 
 /**
  * The useraccounts package must be configured for both client and server to work properly.
@@ -10,12 +10,12 @@ AccountsTemplates.configure({
   showForgotPasswordLink: true,
   texts: {
     errors: {
-      loginForbidden: TAPi18n.__('Incorrect username or password'),
-      pwdMismatch: TAPi18n.__('Passwords don\'t match'),
+      loginForbidden: 'Incorrect username or password',
+      pwdMismatch: 'Passwords don\'t match',
     },
     title: {
-      signIn: TAPi18n.__('Sign In'),
-      signUp: TAPi18n.__('Create your personal account'),
+      signIn: 'Sign In',
+      signUp: 'Create your personal account',
     },
   },
   defaultTemplate: 'Auth_page',

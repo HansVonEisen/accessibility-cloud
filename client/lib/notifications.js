@@ -1,5 +1,5 @@
 import { Bert } from 'meteor/themeteorchef:bert';
-import { TAPi18n } from 'meteor/tap:i18n';
+
 
 export const showNotification = ({ title, message }) => {
   Bert.alert({
@@ -10,7 +10,7 @@ export const showNotification = ({ title, message }) => {
   });
 };
 
-export const showErrorNotification = ({ title = TAPi18n.__('An Error occurred'), error }) => {
+export const showErrorNotification = ({ title = 'An Error occurred', error }) => {
   Bert.alert({
     title,
     message: error.message,

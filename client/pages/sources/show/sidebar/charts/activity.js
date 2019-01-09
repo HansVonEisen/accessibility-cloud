@@ -1,5 +1,5 @@
 import { Template } from 'meteor/templating';
-import { moment } from 'meteor/momentjs:moment';
+import * as moment from 'moment';
 import * as d3 from 'd3';
 import { SourceImports } from '/both/api/source-imports/source-imports';
 import subsManager from '/client/lib/subs-manager';

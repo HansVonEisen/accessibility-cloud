@@ -7,7 +7,7 @@ import { helpers } from '/client/_layouts/helpers';
 import subsManager from '/client/lib/subs-manager';
 import { getDisplayedNameForUser } from '/both/lib/user-name';
 import { getIconHTMLForUser } from '/both/lib/user-icon';
-import { TAPi18n } from 'meteor/tap:i18n';
+
 
 import { Images, DefaultModerationFilter } from '../../../both/api/images/images';
 
@@ -52,7 +52,7 @@ Template.admin_page.events({
   },
   'click .js-remove-user'(event) {
     // eslint-disable-next-line no-alert
-    if (confirm(TAPi18n.__('Do you really want to remove this user?'))) {
+    if (confirm('Do you really want to remove this user?')) {
       Meteor.call('users.remove', this._id);
     }
     event.preventDefault();

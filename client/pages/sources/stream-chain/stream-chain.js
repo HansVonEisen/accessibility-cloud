@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { _ } from 'meteor/underscore';
-import { moment } from 'meteor/momentjs:moment';
+import * as moment from 'moment';
 
 function format(n) {
   const number = Number(n);

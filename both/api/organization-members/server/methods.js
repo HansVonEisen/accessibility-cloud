@@ -3,7 +3,7 @@ import { check, Match } from 'meteor/check';
 import { Organizations } from '/both/api/organizations/organizations.js';
 import { userHasFullAccessToOrganization } from '/both/api/organizations/privileges';
 import { OrganizationMembers } from '../organization-members.js';
-import { TAPi18n } from 'meteor/tap:i18n';
+
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { acceptInvitation, inviteUserToOrganization } from './invitations';
 
@@ -16,18 +16,18 @@ export const insert = new ValidatedMethod({
     console.log('Inviting', invitationEmailAddress, 'to', organizationId, '...');
 
     if (!this.userId) {
-      throw new Meteor.Error(401, TAPi18n.__('Please log in first.'));
+      throw new Meteor.Error(401, 'Please log in first.');
     }
 
     const organization = Organizations.findOne({ _id: organizationId });
 
     if (!organization) {
-      throw new Meteor.Error(404, TAPi18n.__('Organization not found'));
+      throw new Meteor.Error(404, 'Organization not found');
     }
 
     if (!userHasFullAccessToOrganization(this.userId, organization)) {
       throw new Meteor.Error(403,
-        TAPi18n.__('You are not authorized to invite users to this organization.'));
+        'You are not authorized to invite users to this organization.');
     }
 
     return inviteUserToOrganization(invitationEmailAddress, organizationId, 'member');
@@ -43,13 +43,13 @@ export const accept = new ValidatedMethod({
     // this.unblock();
 
     if (!this.userId) {
-      throw new Meteor.Error(401, TAPi18n.__('Please log in first.'));
+      throw new Meteor.Error(401, 'Please log in first.');
     }
 
     const organization = Organizations.findOne({ _id: organizationId });
 
     if (!organization) {
-      throw new Meteor.Error(404, TAPi18n.__('Organization not found'));
+      throw new Meteor.Error(404, 'Organization not found');
     }
 
     return acceptInvitation(this.userId, organizationId, invitationToken);

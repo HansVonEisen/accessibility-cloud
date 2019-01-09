@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
-import { moment } from 'meteor/momentjs:moment';
+import * as moment from 'moment';
 import { _ } from 'meteor/underscore';
 import { Sources } from '/both/api/sources/sources';
 

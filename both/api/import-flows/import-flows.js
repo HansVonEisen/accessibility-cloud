@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
-import { moment } from 'meteor/momentjs:moment';
+import * as moment from 'moment';
 
 export const ImportFlows = new Mongo.Collection('ImportFlows');
 
