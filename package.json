@@ -79,7 +79,6 @@
     "eslint-plugin-meteor": "^4.0.1",
     "eslint-plugin-react": "^6.10.3",
     "flow-bin": "^0.43.1",
-    "react-scripts": "0.9.5",
     "shell-source": "^1.1.0",
     "sinon": "^1.17.7",
     "tslint-config-airbnb": "^5.11.0",
