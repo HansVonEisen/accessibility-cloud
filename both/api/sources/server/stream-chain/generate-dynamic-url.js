@@ -1,5 +1,5 @@
 import { check } from 'meteor/check';
-import * as moment from 'moment';
+import moment from 'moment';
 
 export function generateDynamicUrl({ lastSuccessfulImport, sourceUrl }) {
   if (lastSuccessfulImport) {

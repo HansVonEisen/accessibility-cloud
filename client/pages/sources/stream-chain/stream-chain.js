@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { _ } from 'meteor/underscore';
-import * as moment from 'moment';
+import moment from 'moment';
 import keyValueHelpers from '../../../lib/template-helpers/keyValueHelpers';
 import stringHelpers from '../../../lib/template-helpers/stringHelpers';
 
