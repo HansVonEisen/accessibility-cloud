@@ -38,6 +38,7 @@ kadira:blaze-layout
 # accounts
 accounts-password@1.5.1
 
+
 # mobile
 # crosswalk@1.6.2
 mobile-experience@1.0.5
@@ -72,4 +73,4 @@ aldeed:collection2-core
 aldeed:collection2@3.0.0
 aldeed:schema-deny
 aldeed:schema-index
-jaume:useraccounts-core
+accounts-ui
