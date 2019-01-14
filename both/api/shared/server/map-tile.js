@@ -38,19 +38,16 @@ export default function mapTileSelector(req) {
       type: Number,
       min: 0,
       max: 1e10,
-      decimal: false,
     },
     x: {
       type: Number,
       min: 0,
       max: 1e10,
-      decimal: false,
     },
     z: {
       type: Number,
       min: 5,
       max: 20,
-      decimal: false,
     },
   });
 

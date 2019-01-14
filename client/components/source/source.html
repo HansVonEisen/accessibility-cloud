@@ -1,7 +1,7 @@
 <template name="component_source">
   {{#with source}}
     <li class='list block for-source {{classIfDraft}} '>
-      <a href='{{pathFor "sources.show" _id=_id}}'>
+      <a href='{{FlowRouter.path "sources.show" _id=_id}}'>
         {{#if isDraft}}
           <span class='secondary'>
             {{_"Draft: "}}

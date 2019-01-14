@@ -1,5 +1,5 @@
 import { _ } from 'meteor/underscore';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 
 // Return a MongoDB document selector for a search by distance built
 // with query parameters from given request.

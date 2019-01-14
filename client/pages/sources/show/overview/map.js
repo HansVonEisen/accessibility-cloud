@@ -17,6 +17,7 @@ import { SourceAccessRequests } from '/both/api/source-access-requests/source-ac
 import { getAccessibleOrganizationIdsForRoles } from '/both/api/organizations/privileges';
 import { showNotification, showErrorNotification } from '/client/lib/notifications';
 
+import stringHelpers from '../../../../lib/template-helpers/stringHelpers';
 import initializeMap from './initialize-map';
 import loadAndRenderMap from './render-map';
 
@@ -47,10 +48,10 @@ const reactiveVariables = [
 reactiveVariables.forEach(helper =>
   Template.sources_show_page_map.helpers({
     [helper]() { return Template.instance()[helper].get(); },
-  })
-);
+  }));
 
 Template.sources_show_page_map.helpers({
+  ...stringHelpers,
   hasAccessToSource() {
     const source = Sources.findOne({ _id: FlowRouter.getParam('_id') });
 

@@ -4,6 +4,7 @@ import { Sources } from '/both/api/sources/sources.js';
 import { SourceImports } from '/both/api/source-imports/source-imports.js';
 import subsManager from '/client/lib/subs-manager';
 import { getCurrentFeature } from './get-current-feature';
+import stringHelpers from '../../../../lib/template-helpers/stringHelpers';
 
 function defaultPlaceCountLimit() {
   return 5000;
@@ -88,6 +89,7 @@ Template.sources_show_page.onCreated(function created() {
 });
 
 const helpers = {
+  ...stringHelpers,
   source,
   couldShowAllPlaces,
   isShowingAllPlaces,

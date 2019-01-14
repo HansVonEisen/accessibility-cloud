@@ -1,13 +1,13 @@
-import { ActiveRoute } from 'meteor/zimme:active-route';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { ReactiveDict } from 'meteor/reactive-dict';
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
-import { isApproved } from '/both/lib/is-approved';
 import { getIconHTMLForUser } from '/both/lib/user-icon';
 import { getDisplayedNameForUser } from '/both/lib/user-name';
 import { SEO } from '/client/seo.js';
+import privilegesHelpers from '../lib/template-helpers/privilegesHelpers';
+import routingHelpers from '../lib/template-helpers/routingHelpers';
 
 
 // A store which is local to this file
@@ -64,6 +64,8 @@ export const events = {
 
 
 export const helpers = {
+  ...privilegesHelpers,
+  ...routingHelpers,
   menuOpen() {
     const instance = Template.instance();
     return instance.state.get('menuOpen') && 'menu-open';
@@ -86,12 +88,6 @@ export const helpers = {
     //   { userId: { $exists: false } },
     //   { userId: Meteor.userId() },
     // ] });
-  },
-  activeListClass(list) {
-    const active = ActiveRoute.name('Lists.show')
-      && FlowRouter.getParam('_id') === list._id;
-
-    return active && 'active';
   },
   connected() {
     if (showConnectionIssue.get()) {

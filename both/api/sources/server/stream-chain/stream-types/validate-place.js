@@ -1,7 +1,7 @@
 // import { PlaceInfoSchema } from '@sozialhelden/ac-format';
 // import { Meteor } from 'meteor/meteor';
 // import { check } from 'meteor/check';
-// import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+// import SimpleSchema from 'simpl-schema';
 
 
 // const { Transform } = Npm.require('zstreams');

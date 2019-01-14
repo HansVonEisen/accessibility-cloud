@@ -6,6 +6,7 @@ import { Template } from 'meteor/templating';
 import subsManager from '/client/lib/subs-manager';
 import { GlobalStats } from '/both/api/global-stats/global-stats';
 import createMarkerFromFeature from '/client/lib/create-marker-from-feature';
+import stringHelpers from '../../lib/template-helpers/stringHelpers';
 
 
 const PLACE_SWITCH_ANIMATION_DELAY_MS = 5000;
@@ -88,6 +89,7 @@ Template.page_start.onDestroyed(function pageDestroyed() {
 });
 
 Template.page_start.helpers({
+  ...stringHelpers,
   lastCollectionCount(collectionName) {
     const count = GlobalStats.lastCollectionCount(collectionName);
     if (isNaN(count)) {

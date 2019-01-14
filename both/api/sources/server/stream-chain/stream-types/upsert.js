@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { check, Match } from 'meteor/check';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 import _ from 'lodash';
 import { flatten } from 'mongo-dot-notation';
 import { Sources } from '../../../sources';

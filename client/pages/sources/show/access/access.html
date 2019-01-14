@@ -5,7 +5,7 @@
 
         <form>
           <fieldset data-required="true">
-            <label for="isFreelyAccessible" class="control-label">{{_ 'Share your data with...'}}</label>
+            <label for="isFreelyAccessible" class="control-label">Share your data with...</label>
               <select name="isFreelyAccessible" required="" class="form-control">
                 <option value="restricted" >{{_ "Only selected Organizations"}}</option>
                 <option value="isFreelyAccessible" {{selectedIfAccessibleToAll}}>{{_ "Everybody"}}</option>
@@ -22,7 +22,7 @@
                 <label for='{{this._id}}'>
                   {{name}}
                 </label>
-                <a href='{{ pathFor "organizations.show" this._id}}' class='icon-detail'>?</a>
+                <a href='{{ FlowRouter.path "organizations.show" this._id}}' class='icon-detail'>?</a>
               </li>
             {{/each}}
           </ul>

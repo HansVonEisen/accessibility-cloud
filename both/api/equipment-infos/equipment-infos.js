@@ -1,6 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 import { Meteor } from 'meteor/meteor';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 import { Disruptions } from '../disruptions/disruptions';
 import { Sources } from '../sources/sources';
 import helpers from './helpers';
@@ -44,7 +44,6 @@ EquipmentInfos.schema = new SimpleSchema({
     type: Number,
     min: -180,
     max: 180,
-    decimal: true,
   },
   'properties.originalId': {
     type: String,

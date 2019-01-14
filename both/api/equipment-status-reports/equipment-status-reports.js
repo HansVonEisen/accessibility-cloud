@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 import { EquipmentInfos } from '../equipment-infos/equipment-infos';
 
 export const EquipmentStatusReports = new Mongo.Collection('EquipmentStatusReports');

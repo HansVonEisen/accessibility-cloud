@@ -1,6 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 import { Meteor } from 'meteor/meteor';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import SimpleSchema from 'simpl-schema';
 import { Organizations } from '/both/api/organizations/organizations';
 import { Apps } from '/both/api/apps/apps';
 import LocalizedStringSchema from '../shared/LocalizedStringSchema';

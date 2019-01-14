@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 import './recursive-attributes.html';
 import { _ } from 'lodash';
+import keyValueHelpers from '../../../../lib/template-helpers/keyValueHelpers';
 
 const histogramAttributesMatchers = [
   /^rating/i,
@@ -16,6 +17,7 @@ const histogramAttributesMatchers = [
 ];
 
 Template.sources_show_page_recursive_attributes.helpers({
+  ...keyValueHelpers,
   attributeIsHidden(attributeName) {
     return attributeName.match(/category$/i) || attributeName.match(/description$/i) || attributeName.match(/sourceImportId$/);
   },

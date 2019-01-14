@@ -61,6 +61,7 @@ Factory.define('_license_CC0', Licenses, {
 // ---- JSON SOURCE -------------------------------------------------------------------------
 
 Factory.define('jsonSource', Sources, {
+  shortName: 'Vienna',
   organizationId: Factory.get('organization'),
   licenseId: Factory.get('_license_CC0'),
   languageId: Factory.get('language-en'),

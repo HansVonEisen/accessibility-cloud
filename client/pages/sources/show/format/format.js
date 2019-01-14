@@ -13,6 +13,7 @@ import _ from 'lodash';
 import subsManager from '/client/lib/subs-manager';
 import * as importFlowTemplates from '/client/lib/import-flow-templates';
 import { isAdmin } from '/both/lib/is-admin';
+import keyValueHelpers from '../../../../lib/template-helpers/keyValueHelpers';
 
 const TAB_KEY_CODE = 9;
 
@@ -39,6 +40,7 @@ function getSource() {
 }
 
 const helpers = {
+  ...keyValueHelpers,
   source: getSource,
   importFlowTemplates,
   isAdmin() {

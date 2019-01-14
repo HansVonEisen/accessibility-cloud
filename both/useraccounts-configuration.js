@@ -1,4 +1,4 @@
-import { AccountsTemplates } from 'meteor/useraccounts:core';
+import { AccountsTemplates } from 'meteor/jaume:useraccounts-core';
 
 
 /**
@@ -18,10 +18,10 @@ AccountsTemplates.configure({
       signUp: 'Create your personal account',
     },
   },
-  defaultTemplate: 'Auth_page',
+  // defaultTemplate: 'Auth_page',
   defaultLayout: 'App_body',
-  defaultContentRegion: 'main',
-  defaultLayoutRegions: {},
+  // defaultContentRegion: 'main',
+  // defaultLayoutRegions: {},
   negativeFeedback: false,
   negativeValidation: true,
   positiveValidation: true,
