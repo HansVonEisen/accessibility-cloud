@@ -1,4 +1,5 @@
 import { Meteor } from 'meteor/meteor';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Template } from 'meteor/templating';
 import { Apps } from '/both/api/apps/apps';
 import { Organizations } from '/both/api/organizations/organizations';
@@ -25,6 +26,7 @@ Template.page_dashboard.onCreated(function created() {
 });
 
 const helpers = {
+  FlowRouter,
   Organizations,
   organizations() {
     return Organizations.find({

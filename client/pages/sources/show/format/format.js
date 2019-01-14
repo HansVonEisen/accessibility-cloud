@@ -14,6 +14,7 @@ import subsManager from '/client/lib/subs-manager';
 import * as importFlowTemplates from '/client/lib/import-flow-templates';
 import { isAdmin } from '/both/lib/is-admin';
 import keyValueHelpers from '../../../../lib/template-helpers/keyValueHelpers';
+import stringHelpers from '../../../../lib/template-helpers/stringHelpers';
 
 const TAB_KEY_CODE = 9;
 
@@ -41,6 +42,7 @@ function getSource() {
 
 const helpers = {
   ...keyValueHelpers,
+  ...stringHelpers,
   source: getSource,
   importFlowTemplates,
   isAdmin() {

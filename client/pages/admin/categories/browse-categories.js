@@ -21,6 +21,7 @@ Template.categories_list_page.helpers({
   joinList(l) {
     return l.join(', ');
   },
+  stringify: JSON.stringify,
 });
 
 Template.categories_list_page.events({

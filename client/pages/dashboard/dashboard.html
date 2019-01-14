@@ -6,7 +6,7 @@
   <div class='dashboard with-list'>
     <div>
       <br>
-      <a class='call-to-action button' href='{{FlowRouter.path "organizations.create"}}'>
+      <a class='call-to-action button' href='/organizations/create'>
         {{#if Organizations.whereCurrentUserIsMember}}
           Add Organization
         {{else}}
@@ -17,19 +17,19 @@
 
     {{#each Organizations.whereCurrentUserIsMember}}
       <h2 class='group-header'>
-        <a href='{{FlowRouter.path "organizations.show" _id=_id}}'>
+        <a href='/organizations/{{_id}}'>
           {{name}}
         </a>
       </h2>
       {{#unless tocForOrganizationsAccepted}}
         <div class='has-error'>
-          Please <a href='{{FlowRouter.path "organizations.settings" _id=_id}}'>accept the terms and conditions</a> for this organization.
+          Please <a href='/organizations/{{_id}}/settings'>accept the terms and conditions</a> for this organization.
         </div>
       {{/unless}}
 
       <h3 class='group-header'>
         Sources
-        <a class='action-for-group' href='{{FlowRouter.path "organizations.sources.create" _id=_id}}'>
+        <a class='action-for-group' href='/organizations/{{_id}}/sources/create'>
           Add Source
         </a>
       </h3>
@@ -43,14 +43,14 @@
       {{#if getApps}}
         <h3 class='group-header'>
           Apps
-          <a class='action-for-group' href='{{FlowRouter.path "organizations.apps.create" _id=_id}}'>
+          <a class='action-for-group' href='/organizations/{{_id}}/apps/create'>
             Add an App
           </a>
         </h3>
         <ul class='with-blocks'>
           {{#each getApps}}
             <li class='list block for-app'>
-              <a href='{{FlowRouter.path "apps.show" _id=_id}}'>
+              <a href='/apps/{{_id}}'>
                 <span class='main'>
                   {{name}}
                 </span>

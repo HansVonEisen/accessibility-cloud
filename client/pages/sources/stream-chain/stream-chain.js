@@ -3,6 +3,7 @@ import { Template } from 'meteor/templating';
 import { _ } from 'meteor/underscore';
 import * as moment from 'moment';
 import keyValueHelpers from '../../../lib/template-helpers/keyValueHelpers';
+import stringHelpers from '../../../lib/template-helpers/stringHelpers';
 
 function format(n) {
   const number = Number(n);
@@ -13,6 +14,7 @@ function format(n) {
 }
 const helpers = {
   ...keyValueHelpers,
+  ...stringHelpers,
   unitName() {
     return this.unitName || 'bytes';
   },

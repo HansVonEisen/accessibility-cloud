@@ -23,8 +23,8 @@
       </div>
     {{else}}
       <div class="btns-group">
-        <a href="{{FlowRouter.path 'signin'}}" class="btn-secondary">Sign In</a>
-        <a href="{{FlowRouter.path 'join'}}" class="btn-secondary">Join</a>
+        <a href="/signin" class="btn-secondary">Sign In</a>
+        <a href="/join" class="btn-secondary">Join</a>
       </div>
     {{/if}}
   </div>
@@ -33,18 +33,18 @@
     <div class='wrapper header'>
       <ul class='page-sections'>
         <li>
-          <a href='{{FlowRouter.path "dashboard"}}'  class='{{activeIfRouteGroupNameMatches "data"}}'>Organizations</a>
+          <a href='/dashboard'  class='{{activeIfRouteGroupNameMatches "data"}}'>Organizations</a>
         </li>
         <li>
           <a href='https://github.com/sozialhelden/accessibility-cloud/blob/master/README.md'>Learn</a>
         </li>
         {{#if isAdmin}}
           <li>
-            <a href='{{FlowRouter.path "admin.admin_page"}}' class='{{activeIfRouteGroupNameMatches "admin"}}'>Admin</a>
+            <a href='/admin' class='{{activeIfRouteGroupNameMatches "admin"}}'>Admin</a>
           </li>
         {{/if}}
         <li>
-          <a href='{{FlowRouter.path "imprint"}}' class='{{activeIfRouteNameMatches "imprint"}}'>Legal</a>
+          <a href='/imprint' class='{{activeIfRouteNameMatches "imprint"}}'>Legal</a>
         </li>
       </ul>
 

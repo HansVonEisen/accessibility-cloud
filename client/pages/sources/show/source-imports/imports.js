@@ -4,6 +4,7 @@ import { Sources } from '/both/api/sources/sources.js';
 import { SourceImports } from '/both/api/source-imports/source-imports.js';
 import { PlaceInfos } from '/both/api/place-infos/place-infos.js';
 import subsManager from '/client/lib/subs-manager';
+import stringHelpers from '../../../../lib/template-helpers/stringHelpers';
 
 Template.sources_show_imports_page.onCreated(() => {
   subsManager.subscribe('organizations.public');
@@ -20,6 +21,7 @@ Template.sources_show_imports_page.onCreated(() => {
 
 
 Template.sources_show_header.helpers({
+  ...stringHelpers,
   source() {
     return Sources.findOne(FlowRouter.getParam('_id'));
   },
@@ -30,6 +32,7 @@ function getCurrentSource() {
 }
 
 Template.sources_show_imports_page.helpers({
+  ...stringHelpers,
   source: getCurrentSource,
   isImportButtonEnabled() {
     const source = getCurrentSource();

@@ -8,7 +8,7 @@
     </ul>
 
     {{#if organization.editableBy currentUser._id}}
-      <a class='add-entry' href='{{FlowRouter.path "organizations.sources.create" _id=organization._id}}'>Add another source</a>
+      <a class='add-entry' href='/organizations/{{organization._id}}/sources/create'>Add another source</a>
     {{/if}}
   </div>
   <div>

@@ -7,11 +7,7 @@
           {{#each getImportFlows}}
             <li {{getClassNameForImportFlowListItem _id}}>
               <a
-                href="{{pathFor
-                          route='sources.show.format.for_import_flow'
-                          _id=sourceId
-                          import_flow_index=urlIndex
-                      }}">
+                href="/sources/{{sourceId}}/format/{{urlIndex}}">
                 {{name}}
               </a>
               <button

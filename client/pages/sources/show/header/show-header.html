@@ -1,11 +1,7 @@
 <template name="sources_show_header">
   <li>
     {{#with source.getOrganization}}
-      {{#if activeIfRouteNameMatches "browse"}}
-        <a href='{{FlowRouter.path "browse.dashboard" _id=_id}}'>{{name}}</a>
-      {{else}}
-        <a href='{{FlowRouter.path "organizations.show" _id=_id}}'>{{name}}</a>
-      {{/if}}
+      <a href='/organizations/{{_id}}'>{{name}}</a>
     {{/with}}
   </li>
   <li>

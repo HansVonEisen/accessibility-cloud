@@ -4,6 +4,7 @@ import { Sources } from '/both/api/sources/sources.js';
 import { SEO } from '/client/seo.js';
 
 import subsManager from '/client/lib/subs-manager';
+import routingHelpers from '../../../../lib/template-helpers/routingHelpers';
 
 Template.sources_show_header_sub.onCreated(() => {
   subsManager.subscribe('organizations.public');
@@ -13,6 +14,7 @@ Template.sources_show_header_sub.onCreated(() => {
 
 
 Template.sources_show_header_sub.helpers({
+  ...routingHelpers,
   source() {
     const source = Sources.findOne({ _id: FlowRouter.getParam('_id') });
     const currentRoute = FlowRouter.current().route;

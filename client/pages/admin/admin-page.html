@@ -13,7 +13,7 @@
         <ul>
           {{#each organizations}}
           <li>
-            <a href='{{FlowRouter.path "organizations.show" _id=_id}}'>{{name}}</a>
+            <a href='/organizations/{{_id}}'>{{name}}</a>
             {{#if isUserMemberOfOrganizationWithId currentUser._id _id}}
             (member)
             {{/if}}
@@ -23,11 +23,11 @@
       </section>
       <section>
         <h2>Categories</h2>
-        <a href='{{FlowRouter.path "admin.categories.list"}}'>Import Categories</a>
+        <a href='/admin/categories'>Import Categories</a>
       </section>
       <section>
         <h2>Images</h2>
-        <a class='moderation-link' href='{{FlowRouter.path "admin.images.moderate"}}'>Moderate images {{#if imageBadge}}<b class='item-count-badge'>{{imageBadge}}</b>{{/if}}</a>
+        <a class='moderation-link' href='/admin/images'>Moderate images {{#if imageBadge}}<b class='item-count-badge'>{{imageBadge}}</b>{{/if}}</a>
       </section>
       <section>
         <h2>Localization</h2>

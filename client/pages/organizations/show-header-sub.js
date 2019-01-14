@@ -6,6 +6,7 @@ import { Apps } from '/both/api/apps/apps.js';
 import { SEO } from '/client/seo.js';
 
 import subsManager from '/client/lib/subs-manager';
+import routingHelpers from '../../lib/template-helpers/routingHelpers';
 
 Template.organizations_show_header_sub.onCreated(() => {
   subsManager.subscribe('licenses.public');
@@ -15,6 +16,7 @@ Template.organizations_show_header_sub.onCreated(() => {
 
 
 Template.organizations_show_header_sub.helpers({
+  ...routingHelpers,
   organization() {
     let organization = {};
 
