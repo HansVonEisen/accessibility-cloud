@@ -7,14 +7,14 @@
           <fieldset data-required="true">
             <label for="isFreelyAccessible" class="control-label">Share your data with...</label>
               <select name="isFreelyAccessible" required="" class="form-control">
-                <option value="restricted" >{{_ "Only selected Organizations"}}</option>
-                <option value="isFreelyAccessible" {{selectedIfAccessibleToAll}}>{{_ "Everybody"}}</option>
+                <option value="restricted" >Only selected Organizations</option>
+                <option value="isFreelyAccessible" {{selectedIfAccessibleToAll}}>Everybody</option>
             </select>
           </fieldset>
         </form>
 
         {{#unless source.isFreelyAccessible}}
-          <h3>{{_ "Restrict access to the following organizations"}}</h3>
+          <h3>Restrict access to the following organizations</h3>
           <ul class='access-list'>
             {{#each organizations}}
               <li>
@@ -31,7 +31,7 @@
           <div>
             <label>
               <input type="checkbox" {{checkedIfAccessToSourceCanBeRequested}} class="js-source-access-request-checkbox">
-              {{_ "Users can request access to this data source"}}
+              Users can request access to this data source
             </label>
           </div>
 

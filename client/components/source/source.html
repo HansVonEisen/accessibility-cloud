@@ -4,7 +4,7 @@
       <a href='{{FlowRouter.path "sources.show" _id=_id}}'>
         {{#if isDraft}}
           <span class='secondary'>
-            {{_"Draft: "}}
+            Draft: 
           </span>
         {{/if}}
 
@@ -18,12 +18,12 @@
             <span class="private-source-icon"></span>
           {{/unless}}
 
-          <span class='badge on-right' title={{_ "Number of data records provided by this data source"}}>{{this.documentCount}}</span>
+          <span class='badge on-right' title="Number of data records provided by this data source">{{this.documentCount}}</span>
         </span>
 
         <div class='details'>
           {{#if getLicense}}
-            <span class='on-right' title={{_ "License of this source"}}>
+            <span class='on-right' title="License of this source">
               {{#with getLicense}}
                 {{#if shortName}}
                   {{shortName}}

@@ -9,7 +9,7 @@
   {{#if isAdmin }}
     <div class='dashboard with-list organisations'>
       <section>
-        <h2>{{_"All Organizations"}}</h2>
+        <h2>All Organizations</h2>
         <ul>
           {{#each organizations}}
           <li>
@@ -22,21 +22,21 @@
         </ul>
       </section>
       <section>
-        <h2>{{_"Categories"}}</h2>
-        <a href='{{FlowRouter.path "admin.categories.list"}}'>{{_'Import Categories'}}</a>
+        <h2>Categories</h2>
+        <a href='{{FlowRouter.path "admin.categories.list"}}'>Import Categories</a>
       </section>
       <section>
-        <h2>{{_"Images"}}</h2>
-        <a class='moderation-link' href='{{FlowRouter.path "admin.images.moderate"}}'>{{_'Moderate images'}} {{#if imageBadge}}<b class='item-count-badge'>{{imageBadge}}</b>{{/if}}</a>
+        <h2>Images</h2>
+        <a class='moderation-link' href='{{FlowRouter.path "admin.images.moderate"}}'>Moderate images {{#if imageBadge}}<b class='item-count-badge'>{{imageBadge}}</b>{{/if}}</a>
       </section>
       <section>
-        <h2>{{_"Localization"}}</h2>
+        <h2>Localization</h2>
         <button class='btn js-sync-translations'>Sync translations</button>
         <p class='subtle'>Click this button to upload new strings to and download new translations from transifex. Note that for syncing categories, you might have to restart all containers if the app runs multiple containers.</p>
       </section>
     </div>
     <div class="form block">
-      <h2>{{_"People waiting for approval"}}</h2>
+      <h2>People waiting for approval</h2>
       {{#if usersWaitingForApproval}}
         <ul class='members'>
           {{#each usersWaitingForApproval}}
@@ -44,14 +44,14 @@
               <div class='name-with-icon'>
                 {{{getIconHTML}}} {{getUserName}}
               </div>
-              <button class='btn btn-primary js-approve-user'>{{_"Approve"}}</button>
-              <button class='btn btn-danger btn-inline js-remove-user'>{{_"Remove"}}</button>
+              <button class='btn btn-primary js-approve-user'>Approve</button>
+              <button class='btn btn-danger btn-inline js-remove-user'>Remove</button>
             </li>
           {{/each}}
         </ul>
       {{else}}
         <div class='placeholder'>
-          {{_"None right now"}}
+          None right now
         </div>
       {{/if}}
     </div>

@@ -28,9 +28,6 @@ const stringHelpers = {
       .replace(/(\s*\[\n)|([{}[\]",]*)/g, '')
       .replace(/\n\s\s/g, '\n');
   },
-  _(str) {
-    return str;
-  },
   formatNumber(n) {
     const number = Number(n);
     if (number.toLocaleString) {

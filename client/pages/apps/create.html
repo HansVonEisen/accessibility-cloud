@@ -1,7 +1,7 @@
 <template name="apps_create_page">
 
   <div class="form block">
-    <h2>{{_ "Register an app or service of your organization" }}</h2>
+    <h2>Register an app or service of your organization</h2>
 
     {{#autoForm collection='Apps' id="insertAppForm" type="insert"}}
       {{> afQuickField name='name'}}
@@ -15,9 +15,9 @@
 
   </div>
   <div class="hints">
-    <h3 class="hint">{{_ "Get an Access token" }}</h3>
+    <h3 class="hint">Get an Access token</h3>
     <ol class="checks">
-      <li>{{_ "By creating an API client, you get a free access token that allows you to access our API." }}</li>
+      <li>By creating an API client, you get a free access token that allows you to access our API.</li>
     </ol>
   </div>
 </template>

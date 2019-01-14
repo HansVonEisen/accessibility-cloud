@@ -9,14 +9,14 @@
 
 <template name="organizations_create_page">
   <div class="form block">
-    <h2>{{_ "Please set up your organization:" }}</h2>
+    <h2>Please set up your organization:</h2>
     {{> quickForm collection=Organizations  id="insertOrganizationForm" meteormethod="organizations.insert" type="method"}}
   </div>
   <div class="hints">
-    <h3 class="hint">{{_ "You’re not a member of an organization, yet." }}</h3>
+    <h3 class="hint">You’re not a member of an organization, yet.</h3>
     <ol class="checks">
-      <li>{{_ "You can register your organization here." }}</li>
-      <li>{{_ "Or: Ask members of an existing organization to invite you." }}</li>
+      <li>You can register your organization here.</li>
+      <li>Or: Ask members of an existing organization to invite you.</li>
     </ol>
   </div>
 </template>

@@ -21,7 +21,7 @@
       {{/if}}
       {{#if plainTextSummary}}
         <div>
-          <label>{{_ "Summary"}}</label>
+          <label>Summary</label>
           <div class='markdown'>
             {{#markdown}}{{plainTextSummary}}{{/markdown}}
           </div>
@@ -29,18 +29,18 @@
       {{/if}}
       {{#if websiteURL}}
         <div>
-          <label>{{_"Website"}}</label>
+          <label>Website</label>
           <a href='{{websiteURL}}'>{{websiteURL}}</a>
         </div>
       {{/if}}
       {{#if fullTextURL}}
         <div>
-          <label>{{_"Full text"}}</label>
+          <label>Full text</label>
           <a href='{{fullTextURL}}'>{{fullTextURL}}</a>
         </div>
       {{/if}}
       <!-- <div>
-        <label>{{_"Considered as"}}</label>
+        <label>Considered as</label>
         {{consideredAs}}
       </div> -->
       {{#if requiresAttribution}}

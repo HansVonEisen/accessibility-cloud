@@ -1,6 +1,6 @@
 <template name="organizations_show_page">
   <div class='dashboard with-list sources'>
-    <h2>{{_ "Sources of "}}{{organization.name}}</h2>
+    <h2>Sources of {{organization.name}}</h2>
     <ul class='with-blocks'>
       {{#each organization.getSources}}
         {{> component_source source=this}}
@@ -8,7 +8,7 @@
     </ul>
 
     {{#if organization.editableBy currentUser._id}}
-      <a class='add-entry' href='{{FlowRouter.path "organizations.sources.create" _id=organization._id}}'>{{_ "Add another source"}}</a>
+      <a class='add-entry' href='{{FlowRouter.path "organizations.sources.create" _id=organization._id}}'>Add another source</a>
     {{/if}}
   </div>
   <div>

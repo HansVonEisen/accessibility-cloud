@@ -1,11 +1,11 @@
 <template name="organizations_show_header_sub">
   <div class='sub-pages'>
     {{#if organization.isFullyVisibleForUserId currentUser._id}}
-      <a href='{{FlowRouter.path "organizations.show" _id=organization._id}}' class='{{activeIfRouteNameIs "organizations.show"}}'>{{_"Data Sources"}}</a>
-      <a href='{{FlowRouter.path "organizations.show.members" _id=organization._id}}' class='{{activeIfRouteNameIs "organizations.show.members"}}'>{{_"Members"}}</a>
-      <a href='{{FlowRouter.path "organizations.show.licenses" _id=organization._id}}' class='{{activeIfRouteNameMatches "licenses"}}'>{{_"Licenses"}}</a>
-      <a href='{{FlowRouter.path "organizations.show.apps" _id=organization._id}}' class='{{activeIfRouteNameMatches "apps"}}'>{{_ "Apps"}}</a>
-      <a href='{{FlowRouter.path "organizations.show.settings" _id=organization._id}}' class='{{activeIfRouteNameIs "organizations.show.settings"}}'>{{_"Settings"}}</a>
+      <a href='{{FlowRouter.path "organizations.show" _id=organization._id}}' class='{{activeIfRouteNameIs "organizations.show"}}'>Data Sources</a>
+      <a href='{{FlowRouter.path "organizations.show.members" _id=organization._id}}' class='{{activeIfRouteNameIs "organizations.show.members"}}'>Members</a>
+      <a href='{{FlowRouter.path "organizations.show.licenses" _id=organization._id}}' class='{{activeIfRouteNameMatches "licenses"}}'>Licenses</a>
+      <a href='{{FlowRouter.path "organizations.show.apps" _id=organization._id}}' class='{{activeIfRouteNameMatches "apps"}}'>Apps</a>
+      <a href='{{FlowRouter.path "organizations.show.settings" _id=organization._id}}' class='{{activeIfRouteNameIs "organizations.show.settings"}}'>Settings</a>
     {{/if}}
   </div>
 </template>

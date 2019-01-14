@@ -36,15 +36,15 @@
           <a href='{{FlowRouter.path "dashboard"}}'  class='{{activeIfRouteGroupNameMatches "data"}}'>Organizations</a>
         </li>
         <li>
-          <a href='https://github.com/sozialhelden/accessibility-cloud/blob/master/README.md'>{{_'Learn'}}</a>
+          <a href='https://github.com/sozialhelden/accessibility-cloud/blob/master/README.md'>Learn</a>
         </li>
         {{#if isAdmin}}
           <li>
-            <a href='{{FlowRouter.path "admin.admin_page"}}' class='{{activeIfRouteGroupNameMatches "admin"}}'>{{_'Admin'}}</a>
+            <a href='{{FlowRouter.path "admin.admin_page"}}' class='{{activeIfRouteGroupNameMatches "admin"}}'>Admin</a>
           </li>
         {{/if}}
         <li>
-          <a href='{{FlowRouter.path "imprint"}}' class='{{activeIfRouteNameMatches "imprint"}}'>{{_'Legal'}}</a>
+          <a href='{{FlowRouter.path "imprint"}}' class='{{activeIfRouteNameMatches "imprint"}}'>Legal</a>
         </li>
       </ul>
 
