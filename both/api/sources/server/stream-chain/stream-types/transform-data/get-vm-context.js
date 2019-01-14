@@ -17,7 +17,9 @@ const getLibsContent = () =>
     .join(';\n');
 
 export default function getVMContext() {
-  const globalObject = Object.freeze({});
+  // TODO: Update to this when Meteor supports Node >10.
+  // const globalObject = Object.freeze({});
+  const globalObject = {};
   const helpersContent = getHelpersContent();
   const categoriesJSON = JSON.stringify(getCategories());
   const helpersSetupScript = `
