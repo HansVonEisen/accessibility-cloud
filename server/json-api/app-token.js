@@ -8,7 +8,7 @@ import { Organizations } from '/both/api/organizations/organizations';
 export function getAppFromToken(tokenString) {
   // console.log(`Trying to find app for token '${tokenString}'…`);
 
-  const app = Apps.findOne({ tokenString });
+  const app = tokenString && Apps.findOne({ tokenString });
   if (!app) {
     return null;
   }

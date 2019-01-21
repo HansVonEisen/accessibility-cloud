@@ -13,10 +13,10 @@ async function getFeatureBatch({ url, sourceId, skip, limit, sendProgress }) {
       limit,
       includeSourceIds: sourceId,
       includePlacesWithoutAccessibility: 1,
+      userToken: hashedToken,
     },
     headers: {
       Accept: 'application/json',
-      'X-User-Token': hashedToken,
     },
   };
 
