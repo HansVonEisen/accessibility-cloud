@@ -1,60 +1,17 @@
-import { AccountsTemplates } from 'meteor/jaume:useraccounts-core';
+// import { AccountsTemplates } from 'meteor/jaume:useraccounts-core';
+// import { Accounts } from 'meteor/std:accounts-ui';
 
+// Accounts.ui.config({
+//   passwordSignupFields: 'USERNAME_AND_EMAIL',
+//   loginPath: '/login',
+//   signUpPath: '/signup',
+//   resetPasswordPath: '/reset-password',
+//   profilePath: '/profile',
+//   minimumPasswordLength: 8,
+// });
 
 /**
  * The useraccounts package must be configured for both client and server to work properly.
  * See the Guide for reference (https://github.com/meteor-useraccounts/core/blob/master/Guide.md)
  */
 
-AccountsTemplates.configure({
-  showForgotPasswordLink: true,
-  texts: {
-    errors: {
-      loginForbidden: 'Incorrect username or password',
-      pwdMismatch: 'Passwords don\'t match',
-    },
-    title: {
-      signIn: 'Sign In',
-      signUp: 'Create your personal account',
-    },
-  },
-  // defaultTemplate: 'Auth_page',
-  defaultLayout: 'App_body',
-  // defaultContentRegion: 'main',
-  // defaultLayoutRegions: {},
-  negativeFeedback: false,
-  negativeValidation: true,
-  positiveValidation: true,
-  positiveFeedback: true,
-  showValidating: true,
-});
-
-AccountsTemplates.configureRoute('signIn', {
-  name: 'signin',
-  path: '/signin',
-});
-
-AccountsTemplates.configureRoute('signUp', {
-  name: 'join',
-  path: '/join',
-});
-
-AccountsTemplates.configureRoute('forgotPwd');
-
-AccountsTemplates.configureRoute('resetPwd', {
-  name: 'resetPwd',
-  path: '/reset-password',
-});
-
-AccountsTemplates.addField({
-  _id: 'tocForUserAccepted',
-  type: 'checkbox',
-  displayName: 'I have read and understood the Terms and Conditions',
-  errStr: 'You must agree to the Terms and Conditions.',
-  required: true,
-  template: 'customCheckboxTemplate',
-
-  func(value) {
-    return !value;
-  },
-});
