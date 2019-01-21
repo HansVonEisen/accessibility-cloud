@@ -1,3 +1,3 @@
 import SimpleSchema from 'simpl-schema';
 
-SimpleSchema.extendOptions(['autoform', 'denyInsert', 'denyUpdate']);
+SimpleSchema.extendOptions(['uniforms', 'denyInsert', 'denyUpdate']);

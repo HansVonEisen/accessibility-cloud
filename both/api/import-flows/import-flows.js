@@ -18,11 +18,7 @@ ImportFlows.schema = new SimpleSchema({
     type: String,
     defaultValue: '',
     optional: true,
-    autoform: {
-      afFieldInput: {
-        type: 'hidden',
-      },
-    },
+    uniforms: { component: HiddenField },
   },
   createdAt: {
     type: Number,
@@ -42,20 +38,12 @@ ImportFlows.schema = new SimpleSchema({
   lastImportStartedByUserId: {
     type: String,
     optional: true,
-    autoform: {
-      afFieldInput: {
-        type: 'hidden',
-      },
-    },
+    uniforms: { component: HiddenField },
   },
   nextImportDate: {
     type: Date,
     optional: true,
-    autoform: {
-      afFieldInput: {
-        type: 'hidden',
-      },
-    },
+    uniforms: { component: HiddenField },
   },
 });
 

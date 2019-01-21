@@ -27,65 +27,43 @@ Organizations.schema = new SimpleSchema({
     label: 'Name of company or individual',
     type: String,
     max: 1000,
-    autoform: {
-      afFieldInput: {
-        placeholder: 'e.g. xyz123 Inc.',
-      },
-    },
+    uniforms: { placeholder: 'e.g. xyz123 Inc.' },
   },
   address: {
     label: 'Address',
     type: String,
     max: 1000,
     optional: true,
-    autoform: {
-      afFieldInput: {
-        placeholder: 'e.g. Adam-Riese-St. 27',
-      },
-    },
+    uniforms: { placeholder: 'e.g. Adam-Riese-St. 27' },
   },
   addressAdditional: {
     label: 'Address (Additional)',
     type: String,
     max: 1000,
     optional: true,
-    autoform: {
-      afFieldInput: {
-        placeholder: 'e.g. 1st floor',
-      },
-    },
+    uniforms: { placeholder: 'e.g. 1st floor' },
   },
   zipCode: {
     label: 'ZIP-Code',
     type: String,
     max: 1000,
     optional: true,
-    autoform: {
-      afFieldInput: {
-        placeholder: 'e.g. 12345',
-      },
-    },
+    uniforms: { placeholder: 'e.g. 12345' },
   },
   city: {
     label: 'City',
     type: String,
     optional: true,
     max: 100,
-    autoform: {
-      afFieldInput: {
-        placeholder: 'e.g. Berlin',
-      },
-    },
+    uniforms: { placeholder: 'e.g. Berlin' },
   },
   country: {
     label: 'Country',
     type: String,
     optional: true,
     max: 100,
-    autoform: {
-      afFieldInput: {
-        options: countriesOfTheWorld,
-      },
+    uniforms: {
+      options: countriesOfTheWorld,
     },
   },
   phoneNumber: {
@@ -93,11 +71,7 @@ Organizations.schema = new SimpleSchema({
     type: String,
     max: 100,
     optional: true,
-    autoform: {
-      afFieldInput: {
-        placeholder: 'e.g. +49-30-123455667',
-      },
-    },
+    uniforms: { placeholder: 'e.g. +49-30-123455667' },
   },
   webSite: {
     label: 'Web-Site',
@@ -105,27 +79,21 @@ Organizations.schema = new SimpleSchema({
     regEx: SimpleSchema.RegEx.Url,
     max: 1000,
     optional: true,
-    autoform: {
-      afFieldInput: {
-        placeholder: 'e.g. https://xyz123.org',
-      },
-    },
+    uniforms: { placeholder: 'e.g. https://xyz123.org' },
   },
   description: {
     label: 'Short description (optional)',
     type: String,
     max: 2000,
     optional: true,
-    autoform: {
-      afFieldInput: {
-        placeholder: 'e.g. XYZ123 Inc. is a mid-size company that is often referred to as a primary example for...',
-        rows: 5,
-      },
+    uniforms: {
+      placeholder: 'e.g. XYZ123 Inc. is a mid-size company that is often referred to as a primary example for...',
+      rows: 5,
     },
   },
   tocForOrganizationsAccepted: {
     type: Boolean,
-    autoform: {
+    uniforms: {
       label: false,
       type: 'tos-checkbox',
     },

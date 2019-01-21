@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
+import { HiddenField } from 'uniforms';
 
 import { Organizations } from '/both/api/organizations/organizations';
 import { roles } from './roles';
@@ -15,27 +16,13 @@ OrganizationMembers.schema = new SimpleSchema({
   organizationId: {
     type: String,
     regEx: SimpleSchema.RegEx.Id,
-    autoform: {
-      afFieldInput: {
-        type: 'hidden',
-      },
-      afFormGroup: {
-        label: false,
-      },
-    },
+    uniforms: { component: HiddenField },
   },
   userId: {
     type: String,
     regEx: SimpleSchema.RegEx.Id,
     optional: true,
-    autoform: {
-      afFieldInput: {
-        type: 'hidden',
-      },
-      afFormGroup: {
-        label: false,
-      },
-    },
+    uniforms: { component: HiddenField },
     custom() {
       if (this.field('invitationEmailAddress')) {
         return null;
@@ -73,19 +60,15 @@ OrganizationMembers.schema = new SimpleSchema({
     type: String,
     optional: true,
     regEx: SimpleSchema.RegEx.Email,
-    autoform: {
-      afFieldInput: {
-        label: 'Email address',
-        placeholder: 'somebody@example.com',
-      },
+    uniforms: {
+      label: 'Email address',
+      placeholder: 'somebody@example.com',
     },
   },
   role: {
     type: String,
-    autoform: {
-      afFieldInput: {
-        options: roles,
-      },
+    uniforms: {
+      options: roles,
     },
   },
 });

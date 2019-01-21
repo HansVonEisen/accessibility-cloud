@@ -1,6 +1,7 @@
 import { Mongo } from 'meteor/mongo';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema from 'simpl-schema';
+import { HiddenField } from 'uniforms';
 import { Organizations } from '/both/api/organizations/organizations';
 import { AppLinks } from '/both/api/app-links/app-links';
 import LocalizedStringSchema from '../shared/LocalizedStringSchema';
@@ -66,14 +67,7 @@ Apps.schema = new SimpleSchema({
   organizationId: {
     type: String,
     regEx: SimpleSchema.RegEx.Id,
-    autoform: {
-      afFieldInput: {
-        type: 'hidden',
-      },
-      afFormGroup: {
-        label: false,
-      },
-    },
+    uniforms: { component: HiddenField },s
   },
   name: {
     type: String,
@@ -81,20 +75,16 @@ Apps.schema = new SimpleSchema({
   description: {
     type: String,
     label: 'Description (optional)',
-    autoform: {
-      afFieldInput: {
-        placeholder: 'e.g. This app helps people to...',
-        rows: 10,
-      },
+    uniforms: {
+      placeholder: 'e.g. This app helps people to...',
+      rows: 10,
     },
     optional: true,
   },
   websiteURL: {
     label: 'Website (optional)',
-    autoform: {
-      afFieldInput: {
-        placeholder: 'http://a11y-gourmet.org',
-      },
+    uniforms: {
+      placeholder: 'http://a11y-gourmet.org',
     },
     type: String,
     regEx: SimpleSchema.RegEx.Url,
@@ -102,10 +92,6 @@ Apps.schema = new SimpleSchema({
   },
   tocForAppsAccepted: {
     type: Boolean,
-    autoform: {
-      label: false,
-      type: 'tos-checkbox',
-    },
     allowedValues: [true],
   },
   clientSideConfiguration: { type: clientSideConfiguration, optional: true },

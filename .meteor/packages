@@ -21,7 +21,6 @@ http@1.4.1
 blaze-html-templates@1.0.4
 reactive-dict@1.2.1
 reactive-var@1.0.11
-aldeed:autoform
 meteorhacks:subs-manager
 
 # data
@@ -74,3 +73,4 @@ aldeed:collection2@3.0.0
 aldeed:schema-deny
 aldeed:schema-index
 accounts-ui
+gadicc:blaze-react-component

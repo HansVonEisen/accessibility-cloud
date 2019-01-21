@@ -1,6 +1,7 @@
 import { Mongo } from 'meteor/mongo';
 import { Match } from 'meteor/check';
 import SimpleSchema from 'simpl-schema';
+import { HiddenField } from 'uniforms';
 import { isAdmin } from '/both/lib/is-admin';
 import { ImportFlows } from '/both/api/import-flows/import-flows';
 import { Licenses } from '/both/api/licenses/licenses';
@@ -14,31 +15,20 @@ Sources.schema = new SimpleSchema({
   organizationId: {
     type: String,
     regEx: SimpleSchema.RegEx.Id,
-    autoform: {
-      afFieldInput: {
-        type: 'hidden',
-      },
-      afFormGroup: {
-        label: false,
-      },
-    },
+    uniforms: { component: HiddenField },
   },
   name: {
     label: 'Name',
-    autoform: {
-      afFieldInput: {
-        placeholder: 'e.g. Places in Europe',
-        autofocus: true,
-      },
+    uniforms: {
+      placeholder: 'e.g. Places in Europe',
+      autofocus: true,
     },
     type: String,
   },
   shortName: {
     label: 'Short name for backlinks (should include your Organization)',
-    autoform: {
-      afFieldInput: {
-        placeholder: 'e.g. ACME',
-      },
+    uniforms: {
+      placeholder: 'e.g. PiE',
     },
     type: String,
     max: 20,
@@ -51,20 +41,16 @@ Sources.schema = new SimpleSchema({
   description: {
     label: 'Description',
     type: String,
-    autoform: {
-      afFieldInput: {
-        placeholder: 'e.g. This source shares information about...',
-        rows: 10,
-      },
+    uniforms: {
+      placeholder: 'e.g. This source shares information about...',
+      rows: 10,
     },
     optional: true,
   },
   originWebsiteURL: {
     label: 'Web-site (optional)',
-    autoform: {
-      afFieldInput: {
-        placeholder: 'e.g. https://some.site.com/1234',
-      },
+    uniforms: {
+      placeholder: 'e.g. https://some.site.com/1234',
     },
     type: String,
     regEx: SimpleSchema.RegEx.Url,
@@ -72,10 +58,8 @@ Sources.schema = new SimpleSchema({
   },
   'translations.additionalAccessibilityInformation.en_US': {
     label: 'Additional accessibility information (English)',
-    autoform: {
-      afFieldInput: {
-        placeholder: 'This can be shown as an explanatory tool tip to users.',
-      },
+    uniforms: {
+      placeholder: 'This can be shown as an explanatory tool tip to users.',
     },
     type: String,
     optional: true,
@@ -100,14 +84,7 @@ Sources.schema = new SimpleSchema({
     type: Array,
     label: 'Data is available to everybody',
     defaultValue: [],
-    autoform: {
-      afFieldInput: {
-        type: 'hidden',
-      },
-      afFormGroup: {
-        label: false,
-      },
-    },
+    uniforms: { component: HiddenField },
   },
   'accessRestrictedTo.$': {
     type: String,
@@ -116,40 +93,24 @@ Sources.schema = new SimpleSchema({
     type: Boolean,
     defaultValue: false,
     optional: true,
-    autoform: {
-      afFieldInput: {
-        type: 'hidden',
-      },
-    },
+    uniforms: { component: HiddenField },
   },
   documentCount: {
     type: Number,
     defaultValue: 0,
     optional: true,
-    autoform: {
-      afFieldInput: {
-        type: 'hidden',
-      },
-    },
+    uniforms: { component: HiddenField },
   },
   isShownOnStartPage: {
     type: Boolean,
     defaultValue: false,
     optional: true,
-    autoform: {
-      afFieldInput: {
-        type: 'hidden',
-      },
-    },
+    uniforms: { component: HiddenField },
   },
   lastImportType: {
     type: String,
     optional: true,
-    autoform: {
-      afFieldInput: {
-        type: 'hidden',
-      },
-    },
+    uniforms: { component: HiddenField },
   },
   attributeDistribution: {
     type: Match.ObjectIncluding({}),
@@ -160,21 +121,13 @@ Sources.schema = new SimpleSchema({
     type: String,
     optional: true,
     regEx: SimpleSchema.RegEx.Id,
-    autoform: {
-      afFieldInput: {
-        type: 'hidden',
-      },
-    },
+    uniforms: { component: HiddenField },
   },
   lastSuccessfulImportId: {
     type: String,
     optional: true,
     regEx: SimpleSchema.RegEx.Id,
-    autoform: {
-      afFieldInput: {
-        type: 'hidden',
-      },
-    },
+    uniforms: { component: HiddenField },
   },
 });
 

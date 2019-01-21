@@ -16,32 +16,20 @@ Licenses.schema = new SimpleSchema({
   name: {
     type: String,
     label: 'Official english title',
-    autoform: {
-      afFieldInput: {
-        placeholder: 'e.g. Open Special License v1',
-      },
-    },
+    uniforms: { placeholder: 'e.g. Open Special License v1' },
     max: 1000,
   },
   shortName: {
     type: String,
     label: 'shortName (optional)',
-    autoform: {
-      afFieldInput: {
-        placeholder: 'e.g. ODBLv1',
-      },
-    },
+    uniforms: { placeholder: 'e.g. ODBLv1' },
     optional: true,
     max: 1000,
   },
   websiteURL: {
     type: String,
     label: 'Link to descriptive website (optional)',
-    autoform: {
-      afFieldInput: {
-        placeholder: 'e.g. https://odbl.org/odbl-v1',
-      },
-    },
+    uniforms: { placeholder: 'e.g. https://odbl.org/odbl-v1' },
     regEx: SimpleSchema.RegEx.Url,
     optional: true,
     max: 1000,
@@ -49,11 +37,7 @@ Licenses.schema = new SimpleSchema({
   fullTextURL: {
     type: String,
     label: 'Link to full legal text (optional)',
-    autoform: {
-      afFieldInput: {
-        placeholder: 'e.g. https://odbl.org/odbl-v1/fulllegal',
-      },
-    },
+    uniforms: { placeholder: 'e.g. https://odbl.org/odbl-v1/fulllegal' },
     regEx: SimpleSchema.RegEx.Url,
     optional: true,
     max: 1000,
@@ -61,11 +45,9 @@ Licenses.schema = new SimpleSchema({
   plainTextSummary: {
     type: String,
     label: 'Plaintext summary (optional)',
-    autoform: {
-      afFieldInput: {
-        placeholder: 'e.g. The ODBL has the following rules...',
-        rows: 10,
-      },
+    uniforms: {
+      placeholder: 'e.g. The ODBL has the following rules...',
+      rows: 10,
     },
     max: 100000,
     optional: true,
@@ -74,15 +56,13 @@ Licenses.schema = new SimpleSchema({
     type: String,
     label: 'Considered as...',
     max: 100,
-    autoform: {
-      afFieldInput: {
-        options: [
-          { label: 'Public Domain (CC0)', value: 'CC0' },
-          { label: 'Free, with Attribution required (CCBY)', value: 'CCBY' },
-          { label: 'Share Alike (CCSA)', value: 'CCSA' },
-          { label: 'Restricted / Proprietary (©)', value: 'restricted' },
-        ],
-      },
+    uniforms: {
+      options: [
+        { label: 'Public Domain (CC0)', value: 'CC0' },
+        { label: 'Free, with Attribution required (CCBY)', value: 'CCBY' },
+        { label: 'Share Alike (CCSA)', value: 'CCSA' },
+        { label: 'Restricted / Proprietary (©)', value: 'restricted' },
+      ],
     },
   },
 });
