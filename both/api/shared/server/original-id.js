@@ -23,7 +23,7 @@ export default function distanceSearchSelector(req) {
   });
 
   // Clean the data to remove whitespaces and have correct types
-  schema.clean(originalIdQuery);
+  schema.clean(originalIdQuery, { mutate: true });
 
   // Throw ValidationError if something is wrong
   schema.validate(originalIdQuery);

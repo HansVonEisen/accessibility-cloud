@@ -7,15 +7,14 @@ export function POST({ req, res, collection, appId, userId }) {
     throw new Meteor.Error(404, 'Collection not found.');
   }
 
-  const doc = req.body;
-  console.log('POST', { doc, collectionName: collection._name, appId, userId });
-
   if (!collection.isInsertableBy) {
     // To make the collection accessible as a developer, implement the `isInsertableBy` method.
     throw new Meteor.Error(404, `${collection._name} cannot be inserted over the API yet. If you need this, feel free to contact us at support@accessibility.cloud!`);
   }
 
-  collection.schema.clean(doc);
+  const doc = collection.schema.clean(req.body);
+  console.log('POST', { doc, collectionName: collection._name, appId, userId });
+
   collection.schema.validate(doc);
 
   if (!collection.isInsertableBy({ userId, appId, doc })) {

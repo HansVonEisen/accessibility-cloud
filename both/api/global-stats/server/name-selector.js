@@ -14,7 +14,7 @@ export default function nameSelector(req) {
   });
 
   // Clean the data to remove whitespaces and have correct types
-  schema.clean(nameQuery);
+  schema.clean(nameQuery, { mutate: true });
 
   // Throw ValidationError if something is wrong
   schema.validate(nameQuery);

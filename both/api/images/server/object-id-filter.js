@@ -16,7 +16,7 @@ export default function objectIdFilterSelector(req) {
   });
 
   // Clean the data to remove whitespaces and have correct types
-  schema.clean(fieldsQuery);
+  schema.clean(fieldsQuery, { mutate: true });
 
   // Throw ValidationError if something is wrong
   schema.validate(fieldsQuery);

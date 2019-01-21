@@ -104,7 +104,7 @@ Meteor.publish('images.filteredCount', function(params) {
   check(params, Object);
 
   // Clean the data to remove whitespaces and have correct types
-  FilterSchema.clean(params);
+  FilterSchema.clean(params, { mutate: true });
   // Throw ValidationError if something is wrong
   FilterSchema.validate(params);
 

@@ -19,7 +19,7 @@ export default function categoryFilterSelector(req) {
   });
 
   // Clean the data to remove whitespaces and have correct types
-  schema.clean(categoriesQuery);
+  schema.clean(categoriesQuery, { mutate: true });
 
   // Throw ValidationError if something is wrong
   schema.validate(categoriesQuery);
